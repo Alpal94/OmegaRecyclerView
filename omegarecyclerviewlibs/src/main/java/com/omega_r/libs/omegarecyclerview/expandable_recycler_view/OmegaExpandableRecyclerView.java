@@ -438,6 +438,10 @@ public class OmegaExpandableRecyclerView extends OmegaRecyclerView {
             this.recyclerView = null;
         }
 
+        public void expandWithoutFocus(G group) {
+            items.onExpandStateChanged(group, true);
+        }
+
         public void expand(G group) {
             if (recyclerView != null && recyclerView.getExpandMode() == EXPAND_MODE_SINGLE) {
                 List<G> expandedGroups = items.getExpandedGroups();
